@@ -1,27 +1,47 @@
-import Api from 'api';
-import { ApiRoutes } from 'common';
+// import Api from 'api';
+// import { ApiRoutes } from 'common';
 import { IUser } from 'domain/user';
 import { IFeed } from 'domain/feed';
+import USER from 'mocks/user';
+import USER_FEED from 'mocks/user-feed';
 
-export async function getUser({ nick }: { nick: string }): Promise<IUser> {
-  const response = await Api.get<IUser>({
-    endpoint: ApiRoutes.USER.INFO(nick),
+// export async function getUser({ nick }: { nick: string }): Promise<IUser> {
+//   const response = await Api.get<IUser>({
+//     endpoint: ApiRoutes.USER.INFO(nick),
+//   });
+
+//   return response;
+// }
+
+// export async function getUserFeed({
+//   limit,
+//   nick,
+// }: {
+//   limit: number;
+//   nick: string;
+// }): Promise<IFeed> {
+//   const response = await Api.get<IFeed>({
+//     endpoint: ApiRoutes.USER.FEED(nick),
+//     query: { limit },
+//   });
+
+//   return response;
+// }
+
+export const getUser = ({ nick }: { nick: string }): Promise<IUser> =>
+  new Promise((resolve) => {
+    console.log('Nick', nick);
+    resolve(USER);
   });
 
-  return response;
-}
-
-export async function getUserFeed({
-  limit,
+export const getUserFeed = ({
   nick,
+  limit,
 }: {
-  limit: number;
   nick: string;
-}): Promise<IFeed> {
-  const response = await Api.get<IFeed>({
-    endpoint: ApiRoutes.USER.FEED(nick),
-    query: { limit },
+  limit: number;
+}): Promise<IFeed> =>
+  new Promise((resolve) => {
+    console.log('Nick', nick, limit);
+    resolve(USER_FEED);
   });
-
-  return response;
-}
