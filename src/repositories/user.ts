@@ -31,7 +31,7 @@ import USER_FEED from 'mocks/user-feed';
 export const getUser = ({ nick }: { nick: string }): Promise<IUser> =>
   new Promise((resolve) => {
     console.log('Nick', nick);
-    resolve(USER);
+    setTimeout(() => resolve(USER), 2000);
   });
 
 export const getUserFeed = ({
@@ -43,5 +43,5 @@ export const getUserFeed = ({
 }): Promise<IFeed> =>
   new Promise((resolve) => {
     console.log('Nick', nick, limit);
-    resolve(USER_FEED);
+    setTimeout(() => resolve(USER_FEED), 2000);
   });

@@ -15,5 +15,6 @@ import TIKTUKS from 'mocks/tiktuks';
 export const getTikTuks = ({ limit }: { limit: number }): Promise<ITikTuk[]> =>
   new Promise((resolve) => {
     console.log('TikTuks limit', limit);
-    resolve(TIKTUKS);
+
+    setTimeout(() => resolve(TIKTUKS), 2000);
   });
