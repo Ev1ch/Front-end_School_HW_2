@@ -20,6 +20,13 @@ const reducer = createReducer<ITrendingState>(initialState, {
     ...state,
     isLoading,
   }),
+  [actionsTypes.SET_ERROR]: (
+    state,
+    { payload: { isError } }: ReturnType<typeof actions.setError>,
+  ) => ({
+    ...state,
+    isError,
+  }),
 });
 
 export const useTikTuksSelector = (selector: TSelector<ITrendingState>) =>

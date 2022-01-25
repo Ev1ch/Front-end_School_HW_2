@@ -27,6 +27,13 @@ const reducer = createReducer<IUserState>(initialState, {
     ...state,
     isLoading,
   }),
+  [actionsTypes.SET_ERROR]: (
+    state,
+    { payload: { isError } }: ReturnType<typeof actions.setError>,
+  ) => ({
+    ...state,
+    isError,
+  }),
 });
 
 export const useUserSelector = (selector: TSelector<IUserState>) =>

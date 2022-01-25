@@ -16,5 +16,7 @@ export const getTikTuks = ({ limit }: { limit: number }): Promise<ITikTuk[]> =>
   new Promise((resolve) => {
     console.log('TikTuks limit', limit);
 
-    setTimeout(() => resolve(TIKTUKS), 2000);
+    setTimeout(() => {
+      resolve(TIKTUKS);
+    }, 2000);
   });

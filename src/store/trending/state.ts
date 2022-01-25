@@ -3,6 +3,7 @@ import { ITikTuk } from 'domain/tiktuk';
 export interface ITrendingState {
   items: ITikTuk[] | null;
   isLoading: boolean;
+  isError: boolean;
   options: {
     limit: number;
     pageSize: number;
@@ -13,6 +14,7 @@ export interface ITrendingState {
 export const initialState: ITrendingState = {
   items: null,
   isLoading: false,
+  isError: false,
   options: {
     limit: 30,
     pageSize: 4,

@@ -10,6 +10,7 @@ function* getUserWorker({
 }: ReturnType<typeof actions.getUser>) {
   try {
     yield put(actions.setLoading({ isLoading: true }));
+    yield put(actions.setError({ isError: false }));
 
     const feedLimit: number = yield select(
       (state) => state.user.feed.options.limit,
@@ -26,6 +27,8 @@ function* getUserWorker({
         feed: { items: tiktuks },
       }),
     );
+  } catch {
+    yield put(actions.setError({ isError: true }));
   } finally {
     yield put(actions.setLoading({ isLoading: false }));
   }

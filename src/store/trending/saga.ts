@@ -9,6 +9,7 @@ function* getTrandingWorker({
 }: ReturnType<typeof actions.getTrending>) {
   try {
     yield put(actions.setLoading({ isLoading: true }));
+    yield put(actions.setError({ isError: false }));
 
     const limit: number = yield select((state) => state.trending.options.limit);
     const tiktuks: ITikTuk[] = yield call(TikTuksService.getTikTuks, { limit });
@@ -18,6 +19,8 @@ function* getTrandingWorker({
     } else {
       yield put(actions.addTrending({ tiktuks }));
     }
+  } catch {
+    yield put(actions.setError({ isError: true }));
   } finally {
     yield put(actions.setLoading({ isLoading: false }));
   }
