@@ -60,8 +60,8 @@ const Information = function Information({
           <p className={styles.text}>{description.text}</p>
           <ul className={styles.hashtags}>
             {description.hashtags.map((hashtag) => (
-              <li>
-                <Hashtag hashtag={hashtag} key={hashtag.id} />
+              <li key={hashtag.id}>
+                <Hashtag hashtag={hashtag} />
               </li>
             ))}
           </ul>

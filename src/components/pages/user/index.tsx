@@ -26,8 +26,8 @@ const UserPage = function UserPage({
           />
           <ul className={styles.feed}>
             {feed.map((tiktuk) => (
-              <li>
-                <MinifiedTikTuk tiktuk={tiktuk} key={tiktuk.id} />
+              <li key={tiktuk.id}>
+                <MinifiedTikTuk tiktuk={tiktuk} />
               </li>
             ))}
           </ul>
