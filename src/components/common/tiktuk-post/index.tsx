@@ -11,7 +11,10 @@ interface IVideoProps {
   className?: string;
 }
 
-const TikTukPost = function TikTukPost({ tiktuk, className }: IVideoProps) {
+const TikTukPost = function TikTukPost({
+  tiktuk,
+  className,
+}: IVideoProps): JSX.Element {
   return (
     <div className={clsx(styles.tiktuk, className)}>
       <div className={styles.information}>

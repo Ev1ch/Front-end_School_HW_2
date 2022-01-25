@@ -10,7 +10,10 @@ interface IUserProps {
   feed: IFeedTikTuk[];
 }
 
-const UserPage = function UserPage({ information, feed }: IUserProps) {
+const UserPage = function UserPage({
+  information,
+  feed,
+}: IUserProps): JSX.Element {
   return (
     <div className="user-page">
       <Header />

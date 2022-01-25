@@ -15,7 +15,7 @@ const Information = function Information({
   user,
   stats,
   className,
-}: IInformationProps) {
+}: IInformationProps): JSX.Element {
   const followingCaption = convertToMinifiedNumber(stats.followingCount);
   const followersCaption = convertToMinifiedNumber(stats.followerCount);
   const likesCaption = convertToMinifiedNumber(stats.diggCount);

@@ -7,7 +7,9 @@ interface ITrendingPageProps {
   tiktuks: ITikTuk[];
 }
 
-const TrendingPage = function TrendingPage({ tiktuks }: ITrendingPageProps) {
+const TrendingPage = function TrendingPage({
+  tiktuks,
+}: ITrendingPageProps): JSX.Element {
   return (
     <div className="trending-page">
       <Header />
