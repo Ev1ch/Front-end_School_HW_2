@@ -1,5 +1,5 @@
+import Api from 'api';
 import { ITikTuk } from 'domain/tiktuk';
-import { callApi } from 'helpers';
 import { ApiRoutes } from 'common';
 
 export async function getTikTuks({
@@ -7,7 +7,7 @@ export async function getTikTuks({
 }: {
   limit: number;
 }): Promise<ITikTuk[]> {
-  const response = await callApi<ITikTuk[]>({
+  const response = await Api.get<ITikTuk[]>({
     endpoint: ApiRoutes.FEED,
     query: { limit },
   });

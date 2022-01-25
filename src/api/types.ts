@@ -1,3 +1,5 @@
+import { HttpMethods } from 'common';
+
 export type TBody = unknown;
 
 export type THeader = Headers | string[][] | Record<string, string> | undefined;
@@ -7,13 +9,13 @@ export type IQuery = Record<string, string | number>;
 export type TRequestArgs =
   | {
       endpoint: string;
-      method?: 'GET';
+      method: HttpMethods.GET;
       query?: IQuery;
       body?: never;
     }
   | {
       endpoint: string;
-      method: 'POST' | 'PATCH' | 'PUT';
+      method: Exclude<HttpMethods, HttpMethods.GET>;
       query?: IQuery;
       body?: TBody;
     };
