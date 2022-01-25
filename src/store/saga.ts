@@ -1,6 +1,6 @@
 import { all } from '@redux-saga/core/effects';
-import trendingSaga from 'containers/trending/logic/saga';
-import userSaga from 'containers/user/logic/saga';
+import trendingSaga from './trending/saga';
+import userSaga from './user/saga';
 
 function* saga() {
   yield all([trendingSaga(), userSaga()]);

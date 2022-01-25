@@ -1,5 +1,5 @@
-import { ITrendingState } from 'containers/trending/logic/state';
-import { IUserState } from 'containers/user/logic/state';
+import { ITrendingState } from './trending/state';
+import { IUserState } from './user/state';
 
 interface IRootState {
   trending: ITrendingState;

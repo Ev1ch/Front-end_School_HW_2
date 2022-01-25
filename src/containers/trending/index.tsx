@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react';
 import { Loader, TrendingPage } from 'components';
 import { useAppDispatch } from 'store';
-import { useTikTuksSelector } from './logic';
-import * as actions from './logic/actions';
+import { useTikTuksSelector } from 'store/trending';
+import * as actions from 'store/trending/actions';
 
 const TrendingContainer = function TrendingContainer(): JSX.Element {
   const { items: tiktuks, isLoading } = useTikTuksSelector((state) => state);

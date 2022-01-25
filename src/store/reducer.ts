@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux';
-import trendingReducer from 'containers/trending/logic';
-import userReducer from 'containers/user/logic';
+import trendingReducer from './trending';
+import userReducer from './user';
 
 const reducer = combineReducers({
   trending: trendingReducer,

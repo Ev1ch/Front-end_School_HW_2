@@ -2,8 +2,8 @@ import React, { useEffect } from 'react';
 import { useParams } from 'react-router';
 import { Loader, UserPage } from 'components';
 import { useAppDispatch } from 'store';
-import { useUserSelector } from './logic';
-import * as actions from './logic/actions';
+import { useUserSelector } from 'store/user';
+import * as actions from 'store/user/actions';
 
 const UserContainer = function UserContainer(): JSX.Element {
   const dispatch = useAppDispatch();
