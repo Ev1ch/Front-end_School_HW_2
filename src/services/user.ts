@@ -1,31 +1,19 @@
-import { IUser } from 'types/user';
-import { IFeed } from 'types/feed';
-import { callApi } from 'helpers';
-import { ApiRoutes } from 'common';
+import { IFeed } from 'domain/feed';
+import { IUser } from 'domain/user';
+import { UserRepository } from 'repositories';
 
-class UsersService {
-  public static async getUser({ nick }: { nick: string }): Promise<IUser> {
-    const response = await callApi<IUser>({
-      endpoint: ApiRoutes.USER.INFO(nick),
-    });
-
-    return response;
-  }
-
-  public static async getUserFeed({
-    limit,
-    nick,
-  }: {
-    limit: number;
-    nick: string;
-  }): Promise<IFeed> {
-    const response = await callApi<IFeed>({
-      endpoint: ApiRoutes.USER.FEED(nick),
-      query: { limit },
-    });
-
-    return response;
-  }
+export async function getUser({ nick }: { nick: string }): Promise<IUser> {
+  const user = await UserRepository.getUser({ nick });
+  return user;
 }
 
-export default UsersService;
+export async function getUserFeed({
+  nick,
+  limit,
+}: {
+  nick: string;
+  limit: number;
+}): Promise<IFeed> {
+  const userFeed = await UserRepository.getUserFeed({ nick, limit });
+  return userFeed;
+}

@@ -11,7 +11,7 @@ function* getTrandingWorker({
     yield put(actions.setLoading({ isLoading: true }));
 
     const limit: number = yield select((state) => state.trending.options.limit);
-    const tiktuks: ITikTuk[] = yield call(TikTuksService.getMany, { limit });
+    const tiktuks: ITikTuk[] = yield call(TikTuksService.getTikTuks, { limit });
 
     if (toSet) {
       yield put(actions.setTrending({ tiktuks }));

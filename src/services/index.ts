@@ -1,2 +1,2 @@
-export { default as TikTuksService } from './tiktuks';
-export { default as UserService } from './user';
+export * as TikTuksService from './tiktuks';
+export * as UserService from './user';
