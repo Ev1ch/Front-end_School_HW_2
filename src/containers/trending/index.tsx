@@ -4,7 +4,7 @@ import { useAppDispatch } from 'store';
 import { useTikTuksSelector } from './logic';
 import * as actions from './logic/actions';
 
-const TrendingContainer = function TrendingContainer() {
+const TrendingContainer = function TrendingContainer(): JSX.Element {
   const { items: tiktuks, isLoading } = useTikTuksSelector((state) => state);
   const dispatch = useAppDispatch();
 
