@@ -1,5 +1,5 @@
 import React from 'react';
-import { IUserInformation, IUserStats } from 'types/user';
+import { IUserInformation, IUserStats } from 'domain/user';
 import { Avatar } from 'components';
 import { convertToMinifiedNumber } from 'helpers';
 import clsx from 'clsx';

@@ -1,6 +1,6 @@
 import React from 'react';
 import clsx from 'clsx';
-import { IHashtag } from 'types/tiktuk';
+import { IHashtag } from 'domain/tiktuk';
 import styles from './hashtag.module.scss';
 
 interface IHashtagProps {

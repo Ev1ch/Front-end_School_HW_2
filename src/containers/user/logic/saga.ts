@@ -1,7 +1,7 @@
 import { all, takeEvery, call, put, select } from 'redux-saga/effects';
 import { UserService } from 'services';
-import { IUser } from 'types/user';
-import { IFeed } from 'types/feed';
+import { IUser } from 'domain/user';
+import { IFeed } from 'domain/feed';
 import * as actions from './actions';
 import * as actionsTypes from './actions-types';
 

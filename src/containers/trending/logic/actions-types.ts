@@ -1,4 +1,4 @@
-import { ITikTuk } from 'types/tiktuk';
+import { ITikTuk } from 'domain/tiktuk';
 
 export const GET_TRENDING = 'TRENDING:GET_TRENDING';
 export const SET_TRENDING = 'TRENDING:SET_TRENDING';

@@ -1,7 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router';
 import { Avatar, Hashtag } from 'components';
-import { IAuthorMeta, IHashtag, IMusicMeta } from 'types/tiktuk';
+import { IAuthorMeta, IHashtag, IMusicMeta } from 'domain/tiktuk';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCheck, faCompactDisc } from '@fortawesome/free-solid-svg-icons';
 import { Routes } from 'common';

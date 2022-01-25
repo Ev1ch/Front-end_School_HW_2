@@ -1,4 +1,4 @@
-import { ITikTuk } from 'types/tiktuk';
+import { ITikTuk } from 'domain/tiktuk';
 
 export interface ITrendingState {
   items: ITikTuk[] | null;

@@ -1,5 +1,5 @@
-import { IFeedTikTuk } from 'types/feed';
-import { IUser } from 'types/user';
+import { IFeedTikTuk } from 'domain/feed';
+import { IUser } from 'domain/user';
 
 export interface IUserInformationState {
   item: IUser | null;

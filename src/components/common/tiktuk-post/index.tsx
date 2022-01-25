@@ -1,5 +1,5 @@
 import React from 'react';
-import { ITikTuk } from 'types/tiktuk';
+import { ITikTuk } from 'domain/tiktuk';
 import clsx from 'clsx';
 import Information from './information';
 import Video from './video';

@@ -1,7 +1,7 @@
 import React from 'react';
 import { faPlay } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { IFeedTikTuk } from 'types/feed';
+import { IFeedTikTuk } from 'domain/feed';
 import { convertToMinifiedNumber } from 'helpers';
 import styles from './minified-tiktuk.module.scss';
 

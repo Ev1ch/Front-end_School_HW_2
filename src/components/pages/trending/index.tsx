@@ -1,6 +1,6 @@
 import React from 'react';
 import { Header, TikTukPost } from 'components';
-import { ITikTuk } from 'types/tiktuk';
+import { ITikTuk } from 'domain/tiktuk';
 import styles from './trending.module.scss';
 
 interface ITrendingPageProps {
