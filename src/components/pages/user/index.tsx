@@ -1,6 +1,6 @@
 import React from 'react';
-import { IUser } from 'types/user';
-import { IFeedTikTuk } from 'types/feed';
+import { IUser } from 'domain/user';
+import { IFeedTikTuk } from 'domain/feed';
 import { Header, MinifiedTikTuk } from 'components';
 import Information from './information';
 import styles from './user.module.scss';
@@ -10,7 +10,10 @@ interface IUserProps {
   feed: IFeedTikTuk[];
 }
 
-const UserPage = function UserPage({ information, feed }: IUserProps) {
+const UserPage = function UserPage({
+  information,
+  feed,
+}: IUserProps): JSX.Element {
   return (
     <div className="user-page">
       <Header />
@@ -23,8 +26,8 @@ const UserPage = function UserPage({ information, feed }: IUserProps) {
           />
           <ul className={styles.feed}>
             {feed.map((tiktuk) => (
-              <li>
-                <MinifiedTikTuk tiktuk={tiktuk} key={tiktuk.id} />
+              <li key={tiktuk.id}>
+                <MinifiedTikTuk tiktuk={tiktuk} />
               </li>
             ))}
           </ul>

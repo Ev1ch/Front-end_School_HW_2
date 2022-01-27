@@ -1,20 +1,11 @@
-import { ITikTuk } from 'types/tiktuk';
-import { callApi } from 'helpers';
-import { ApiRoutes } from 'common';
+import { ITikTuk } from 'domain/tiktuk';
+import { TikTuksRepository } from 'repositories';
 
-class TikTuksService {
-  public static async getMany({
-    limit,
-  }: {
-    limit: number;
-  }): Promise<ITikTuk[]> {
-    const response = await callApi<ITikTuk[]>({
-      endpoint: ApiRoutes.FEED,
-      query: { limit },
-    });
-
-    return response;
-  }
+export async function getTikTuks({
+  limit,
+}: {
+  limit: number;
+}): Promise<ITikTuk[]> {
+  const tiktuks = await TikTuksRepository.getTikTuks({ limit });
+  return tiktuks;
 }
-
-export default TikTuksService;

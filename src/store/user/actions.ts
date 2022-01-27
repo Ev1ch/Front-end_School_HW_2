@@ -10,3 +10,6 @@ export const setUser = createAction<actionsTypes.ISetUserArgs>(
 export const setLoading = createAction<actionsTypes.ISetLoadingArgs>(
   actionsTypes.SET_LOADING,
 );
+export const setError = createAction<actionsTypes.ISetErrorArgs>(
+  actionsTypes.SET_ERROR,
+);

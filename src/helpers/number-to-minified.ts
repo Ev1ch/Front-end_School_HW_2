@@ -30,20 +30,22 @@ const convertToMinifiedNumber = (number: number): string => {
     },
   };
 
-  Object.values(Stages).forEach((currentStage): string => {
-    const dividedNumber = number / currentStage.DIVIDER;
+  // eslint-disable-next-line
+  for (const stage in Stages) {
+    const dividedNumber = number / Stages[stage].DIVIDER;
+    console.log('Number', number);
+    console.log('dividedNumber', dividedNumber);
 
-    if (number < currentStage.MAXIMUM) {
+    if (number < Stages[stage].MAXIMUM) {
       convertedNumber = `${
         Number.isInteger(dividedNumber)
           ? dividedNumber
           : dividedNumber.toFixed(1)
-      } ${currentStage.POSTFIX}`;
+      } ${Stages[stage].POSTFIX}`;
+
       return convertedNumber;
     }
-
-    return String(number);
-  });
+  }
 
   return convertedNumber;
 };

@@ -1,7 +1,7 @@
 import { API_ROOT, HttpMethods } from 'common';
 import { TRequestArgs, THeader, TBody, IRequestInit } from './types';
 
-const getUrl = ({ endpoint, query }: TRequestArgs): URL => {
+export const getUrl = ({ endpoint, query }: TRequestArgs): URL => {
   const url = new URL(endpoint, API_ROOT);
 
   if (query) {
@@ -13,7 +13,7 @@ const getUrl = ({ endpoint, query }: TRequestArgs): URL => {
   return url;
 };
 
-const getArgs = (args: TRequestArgs): RequestInit => {
+export const getArgs = (args: TRequestArgs): IRequestInit => {
   const headers: THeader = {};
   let body: TBody | null = null;
   const method = args.method || HttpMethods.GET;
@@ -37,8 +37,3 @@ const getArgs = (args: TRequestArgs): RequestInit => {
     ...(body ? { body } : {}),
   } as IRequestInit;
 };
-
-const callApi = <T>(args: TRequestArgs): Promise<T> =>
-  fetch(getUrl(args).href, getArgs(args)).then((response) => response.json());
-
-export default callApi;

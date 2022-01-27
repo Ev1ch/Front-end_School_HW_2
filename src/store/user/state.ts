@@ -2,12 +2,14 @@ import { IUserInformationState, IUserFeedState } from './types';
 
 export interface IUserState {
   isLoading: boolean;
+  isError: boolean;
   information: IUserInformationState;
   feed: IUserFeedState;
 }
 
 export const initialState: IUserState = {
   isLoading: false,
+  isError: false,
   information: {
     item: null,
   },

@@ -1,5 +1,5 @@
 import React from 'react';
-import { ITikTuk } from 'types/tiktuk';
+import { ITikTuk } from 'domain/tiktuk';
 import clsx from 'clsx';
 import Information from './information';
 import Video from './video';
@@ -11,7 +11,10 @@ interface IVideoProps {
   className?: string;
 }
 
-const TikTukPost = function TikTukPost({ tiktuk, className }: IVideoProps) {
+const TikTukPost = function TikTukPost({
+  tiktuk,
+  className,
+}: IVideoProps): JSX.Element {
   return (
     <div className={clsx(styles.tiktuk, className)}>
       <div className={styles.information}>

@@ -16,6 +16,7 @@ Let us take some steps to start working on the project:
 
 I will leave a few words about the folder and logic structure of this project:
 
+- `api` - folder with API functions
 - `assets` - folder with used images, icons, fonts and other media.
 - `common`- folder with constants and numeric values.
   - `constants` - here you can find most of useful constants.
@@ -26,13 +27,13 @@ I will leave a few words about the folder and logic structure of this project:
   - `modals` - just all modals.
   - `pages` - directory with pages, which are based on components.
 - `containers` - logic units, which passes props to the pages. The pages just visualize their properties, but all logic is located in the containers. The containers are connecte with the app router.
-  - `*/logic` - folders with logic of this container, where some actions with the store are performed.
+- `domain` - types of API entities ants their parts.
 - `helpers` - functions, classes, which are not connected to the app, but are used in its parts.
 - `mocks` - mocked data, which is used here to replace not working API.
+- `repositories` - functions, which are used to integrate with entities from API
 - `services` - place, where all business logic of API integration is located.
-- `store` - some initial app store settings are here.
+- `store` - app store settings are here.
 - `styles` - basic app styles, for example normalize and other.
-- `types` - types of API entities ants their parts.
 
 ### Used tools
 

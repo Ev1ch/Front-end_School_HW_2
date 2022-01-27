@@ -16,3 +16,6 @@ export const setPage = createAction<actionsTypes.ISetPage>(
 export const setLoading = createAction<actionsTypes.ISetLoading>(
   actionsTypes.SET_LOADING,
 );
+export const setError = createAction<actionsTypes.ISetErrorArgs>(
+  actionsTypes.SET_ERROR,
+);

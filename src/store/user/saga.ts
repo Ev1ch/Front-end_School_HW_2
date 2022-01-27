@@ -1,7 +1,7 @@
 import { all, takeEvery, call, put, select } from 'redux-saga/effects';
 import { UserService } from 'services';
-import { IUser } from 'types/user';
-import { IFeed } from 'types/feed';
+import { IUser } from 'domain/user';
+import { IFeed } from 'domain/feed';
 import * as actions from './actions';
 import * as actionsTypes from './actions-types';
 
@@ -10,6 +10,7 @@ function* getUserWorker({
 }: ReturnType<typeof actions.getUser>) {
   try {
     yield put(actions.setLoading({ isLoading: true }));
+    yield put(actions.setError({ isError: false }));
 
     const feedLimit: number = yield select(
       (state) => state.user.feed.options.limit,
@@ -26,6 +27,8 @@ function* getUserWorker({
         feed: { items: tiktuks },
       }),
     );
+  } catch {
+    yield put(actions.setError({ isError: true }));
   } finally {
     yield put(actions.setLoading({ isLoading: false }));
   }

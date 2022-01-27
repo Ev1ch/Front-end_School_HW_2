@@ -1,13 +1,15 @@
 import React from 'react';
 import { Header, TikTukPost } from 'components';
-import { ITikTuk } from 'types/tiktuk';
+import { ITikTuk } from 'domain/tiktuk';
 import styles from './trending.module.scss';
 
 interface ITrendingPageProps {
   tiktuks: ITikTuk[];
 }
 
-const TrendingPage = function TrendingPage({ tiktuks }: ITrendingPageProps) {
+const TrendingPage = function TrendingPage({
+  tiktuks,
+}: ITrendingPageProps): JSX.Element {
   return (
     <div className="trending-page">
       <Header />
@@ -15,8 +17,8 @@ const TrendingPage = function TrendingPage({ tiktuks }: ITrendingPageProps) {
         <div className="container">
           <ul className={styles.tiktuks}>
             {tiktuks.map((tiktuk: ITikTuk) => (
-              <li>
-                <TikTukPost tiktuk={tiktuk} key={tiktuk.id} />
+              <li key={tiktuk.id}>
+                <TikTukPost tiktuk={tiktuk} />
               </li>
             ))}
           </ul>

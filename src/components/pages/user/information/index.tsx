@@ -1,5 +1,5 @@
 import React from 'react';
-import { IUserInformation, IUserStats } from 'types/user';
+import { IUserInformation, IUserStats } from 'domain/user';
 import { Avatar } from 'components';
 import { convertToMinifiedNumber } from 'helpers';
 import clsx from 'clsx';
@@ -15,7 +15,7 @@ const Information = function Information({
   user,
   stats,
   className,
-}: IInformationProps) {
+}: IInformationProps): JSX.Element {
   const followingCaption = convertToMinifiedNumber(stats.followingCount);
   const followersCaption = convertToMinifiedNumber(stats.followerCount);
   const likesCaption = convertToMinifiedNumber(stats.diggCount);
